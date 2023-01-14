@@ -1,0 +1,70 @@
+img {
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    float: left;
+    margin-right: 10px;
+    
+  }
+body {
+    background-image: url('iiui.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+  }
+  
+.myImg{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+ 
+h1 {
+    text-align: center;
+    color: aliceblue;
+    font-size: 45px;
+  }
+
+h2 {
+    text-align: center;
+    color: aliceblue;
+    font-size: 45px;
+  }
+ 
+.number {
+    text-align: center;
+    color: rgb(47, 7, 243);
+    font-size: 40px;
+  }
+
+
+.marquee {
+  
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+  }
+
+.marquee h1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient( #0bf067 0%, #01f62e 29%, #dfc324 67%, #fff800 100% );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    margin:0%;
+    animation: marquee 15s linear infinite;
+    }
+    @keyframes marquee {
+    0% {
+    transform: translateX(-100%);
+    }
+    100% {
+    transform: translateX(100%);
+    }
+
+
+  }

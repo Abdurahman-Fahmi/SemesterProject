@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Vechile Rental</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"
+    />
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="main_container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="#">Online Vechile Rental</a>
+        </div>
+        <div class="navbar_items">
+          <ul>
+            <li>
+              <a href="index.html"
+                ><div class="fa fa-home"></div>
+                Home</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><div class="fa fa-users"></div>
+                About us</a
+              >
+              <ul>
+                <li><a href="owner/owner.html" target="_blank">Owner</a></li>
+                <li><a href="#" target="_blank">Co-Owner</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">
+                <div class="fa fa-phone"></div>
+                Conatct us</a
+              >
+              <ul>
+                <li><a href="tel:+923202690996">Call us</a></li>
+                <li>
+                  <a href="mailto:abdur.bsse4047@iiu.edu.pk" target="_blank"
+                    >Email us</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="sign and login/signup.php" target="_blank">
+                <div class="fa fa-user-circle-o"></div>
+                Sign up</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="banner_image">
+        <div class="banner_content">
+          <h1>
+            Need a rental vechile? You've come to the right place
+            <div class="fa fa-check-circle-o"></div>
+          </h1>
+        </div>
+      </div>
+
+      <div class="marquee">
+        <h1>
+          <div class="fa fa-university"></div>
+          Speical discount for IIUI students!
+        </h1>
+      </div>
+
+      <div class="container">
+        <div class="box">
+          <div class="icon">
+            <i class="fa fa-car" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <h3>Car</h3>
+            <p>
+              We provide cars bassed on daily rental. <br /><br />
+              Minimum 1 day Up-to months.
+            </p>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="icon">
+            <i class="fa fa-motorcycle" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <h3>Bike</h3>
+            <p>
+              We provide Bikes bassed on hourly rental. <br /><br />
+              Minimum 3 hour Up-to days.
+            </p>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="icon">
+            <i class="fa fa-bus" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <h3>Bus</h3>
+            <p>
+              Buses rental provided only with our drivers. <br /><br />
+              Minimum 3 days Up-to weeks.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="searchForm">
+        <h2 style="color: #012e3b">
+          Which type of vehicle? &nbsp &nbsp With or Witout driver?
+        </h2>
+
+        <div class="radio-item">
+          <input
+            id="rad-car"
+            type="radio"
+            name="radio-vehicle"
+            value="Car"
+          /><label class="fa fa-car radbut" for="rad-car"></label>
+          <input
+            id="rad-bike"
+            type="radio"
+            name="radio-vehicle"
+            value="Bike"
+          /><label class="fa fa-motorcycle radbut" for="rad-bike"></label>
+          <input
+            id="rad-bus"
+            type="radio"
+            name="radio-vehicle"
+            value="Bus"
+          /><label class="fa fa-bus radbut" for="rad-bus"></label>
+        </div>
+        <div class="radio-item-driver">
+          <div class="radio-item">
+            <input
+              id="rad1-driver"
+              type="radio"
+              name="radio-driver"
+              value="With Driver"
+            /><label class="fa fa-user radbut" for="rad1-driver"></label>
+            <input
+              id="rad2-driver"
+              type="radio"
+              name="radio-driver"
+              value="Without Driver"
+            /><label class="fa fa-user-times radbut" for="rad2-driver"></label>
+          </div>
+        </div>
+        <div class="iam18">
+          <input id="check18" type="checkbox" />
+          <label class="checkbut" for="check18"> I am older than 20 </label>
+        </div>
+
+        <div class="datetimerino">
+          <label class="fa fa-calendar"> Pick-up date: </label>
+          <input type="text" id="datepicker" placeholder=" Date" />
+          <button id="setDate" class="setDate">Set Date</button>
+
+          <br />
+        </div>
+
+        <button
+          id="submit"
+          class="submit"
+          style="display: none"
+          onclick="submitCheck()"
+        >
+          Submit
+        </button>
+      </div>
+
+      <div class="customerChoice">
+        <h2 id="output"></h2>
+        <button
+          id="Search"
+          class="setDate"
+          style="display: none; margin: 0 auto; margin-top: 20px"
+          onclick="searchCheck()"
+        >
+          Search
+        </button>
+      </div>
+      <h2 class="offeredTrips">
+        Offered Trips
+        <div class="fa fa-flag"></div>
+      </h2>
+
+      <div class="slideImages">
+        <div class="slider">
+          <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1" />
+            <input type="radio" name="radio-btn" id="radio2" />
+            <input type="radio" name="radio-btn" id="radio3" />
+            <input type="radio" name="radio-btn" id="radio4" />
+            <input type="radio" name="radio-btn" id="radio5" />
+
+            <div class="slide first">
+              <img src="images/trip 1.jpg" alt="Unable to load image" />
+            </div>
+
+            <div class="slide">
+              <img src="images/trip 2.jpg" alt="Unable to load image" />
+            </div>
+
+            <div class="slide">
+              <img src="images/trip 3.jpg" alt="Unable to load image" />
+            </div>
+
+            <div class="slide">
+              <img src="images/trip 4.jpg" alt="Unable to load image" />
+            </div>
+
+            <div class="slide">
+              <img src="images/trip 5.jpg" alt="Unable to load image" />
+            </div>
+
+            <div class="navigation-auto">
+              <div class="auto-btn1"></div>
+              <div class="auto-btn2"></div>
+              <div class="auto-btn3"></div>
+              <div class="auto-btn4"></div>
+              <div class="auto-btn5"></div>
+            </div>
+          </div>
+          <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+            <label for="radio5" class="manual-btn"></label>
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          var counter = 1;
+          setInterval(function () {
+            document.getElementById("radio" + counter).checked = true;
+            counter++;
+            if (counter > 5) {
+              counter = 1;
+            }
+          }, 5000);
+        </script>
+      </div>
+
+      <div>
+        <article>
+          <div
+            style="
+              margin-top: 100px;
+              height: 800px;
+              position: relative;
+              overflow: hidden;
+              flex-basis: 100%;
+              width: 100%;
+            "
+          >
+            <h2 class="offeredTrips">
+              <div class="fa fa-camera"></div>
+              Our Trips!
+            </h2>
+
+            <iframe
+              src="https://widgets.woxo.tech/e8ba7402-7209-4483-bcd8-a7eda7225c89#mission-control-component-16d9385c-251d-4a7f-b649-e4ad83e054c3"
+              title="Instagram widgets for website"
+              data-hj-allow-iframe="true"
+              style="
+                width: 100%;
+                height: 100%;
+                border: none;
+                overflow: hidden;
+                transition: all 0.1s ease 0s;
+              "
+            ></iframe>
+          </div>
+        </article>
+
+        <script src="https://cdn2.woxo.tech/a.js#6114eed12580aa0015cfa0cc"></script>
+      </div>
+
+      <br />
+      <footer class="footer">
+        <div class="footerContainer">
+          <div class="row">
+            <div class="footer-col">
+              <h4>More information</h4>
+              <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Rental locations</a></li>
+                <li><a href="#">Car rental guide</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Business center</h4>
+              <ul>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Quality management</a></li>
+                <li><a href="#">Travel Agents</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Legal information</h4>
+              <ul>
+                <li><a href="#">Car rental terms</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Legal mentions</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Follow us</h4>
+              <div class="social-links">
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/profile.php?id=100011408111375"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+                <a target="_blank" href="https://twitter.com/"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a target="_blank" href="https://www.instagram.com/mr.na._/"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h5 class="copy_right">
+          &copy; 2022 Online Vehicle Rental. All rights reserved.
+        </h5>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
